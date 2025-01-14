@@ -29,7 +29,7 @@ contract HelperConfig is Script {
 
     function getSepoliaConfig() public view returns (NetworkConfig memory) {
         NetworkConfig memory sepoliaNetworkConfig = NetworkConfig({
-            proxyApi3: 0x5b0cf2b36a65a6BB085D501B971e4c102B9Cd473,
+            proxyApi3: 'your api',
             wEth: 0x4200000000000000000000000000000000000006, //Ink Sepolia and Mainnet
             deployerKey: vm.envUint("PRIVATE_KEY")
         });
@@ -38,7 +38,7 @@ contract HelperConfig is Script {
 
     function getMainConfig() public view returns (NetworkConfig memory) {
         NetworkConfig memory MainNetworkConfig = NetworkConfig({
-            proxyApi3: 0x5b0cf2b36a65a6BB085D501B971e4c102B9Cd473, //not from mainnet
+            proxyApi3: 'your api', //not from mainnet
             wEth: 0x4200000000000000000000000000000000000006, //Ink Sepolia and Mainnet
             deployerKey: vm.envUint("PRIVATE_KEY")
         });
