@@ -1,0 +1,43 @@
+# General ignores for both backend and frontend
+node_modules/
+.env
+dist/
+build/
+.DS_Store
+
+# Specific ignores for PrestaINK-Back
+/PrestaINK-Back/.certora_internal/
+/PrestaINK-Back/.DS_Store
+/PrestaINK-Back/.github/
+/PrestaINK-Back/broadcast/
+/PrestaINK-Back/cache/
+/PrestaINK-Back/out/
+/PrestaINK-Back/bin/
+/PrestaINK-Back/docs/
+
+
+
+# Specific ignores for PrestaINK-Back
+/PrestaINK-Back/cache/
+/PrestaINK-Back/out/
+!/PrestaINK-Back/broadcast
+/PrestaINK-Back/broadcast/*/31337/
+/PrestaINK-Back/broadcast/**/dry-run/
+/PrestaINK-Back/.certora_internal/
+/PrestaINK-Back/bin/
+/PrestaINK-Back/docs/
+/PrestaINK-Back/report.md
+/PrestaINK-Back/template.txt
+
+# Specific ignores for PrestaINK-Front
+/PrestaINK-Front/.env
+/PrestaINK-Front/node_modules/
+/PrestaINK-Front/.vercel/
+/PrestaINK-Front/.next/
+
+# Logs
+*.log
+npm-debug.log*
+
+# System files
+Thumbs.db
