@@ -27,6 +27,11 @@ Users can withdraw collateral and burn **PRINK** as long as the required health 
 ### Liquidations
 The protocol allows users to liquidate under-collateralized positions, ensuring the system's stability.
 
+# Try Out
+The app is live and ready for interaction. You can test it at the following address:
+[https://prestaink.vercel.app/](https://prestaink.vercel.app/)
+
+
 # Installation
 
 ### BackEnd
