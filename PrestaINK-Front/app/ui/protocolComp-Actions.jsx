@@ -1,22 +1,17 @@
-import { useState, useEffect } from "react";
-import { ethers } from "ethers"; // Importing ethers
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  Input,
-} from "@nextui-org/react";
-
 import ModalMint from "./protocol-ModalMintPRINK";
 import ModalRedeemAndBurn from "./protocol-ModalRedeemAndBurn";
 import ModalRedeem from "./protocol-ModalRedeem";
 import ModalDeposit from "./modal-deposit";
 import ModalBurnPRINK from "./modal-burnPrink";
 
-export default function ProtocolActions({ addressUser }) {
+export default function ProtocolActions({
+  addressUser,
+  prinkMinted,
+  usdValueCollateral,
+}) {
+  const maxPrink = Math.floor(usdValueCollateral / 2 - prinkMinted);
+  const maxPrinkMedium = Math.floor(usdValueCollateral / 3 - prinkMinted);
+
   return (
     <>
       <div className='flex flex-col w-[100%]'>
@@ -25,7 +20,10 @@ export default function ProtocolActions({ addressUser }) {
             <ModalDeposit></ModalDeposit>
           </div>
           <div>
-            <ModalMint></ModalMint>
+            <ModalMint
+              amountPrinkHigh={maxPrink}
+              amountPrinkMedium={maxPrinkMedium}
+            ></ModalMint>
           </div>
           <div>
             <ModalBurnPRINK></ModalBurnPRINK>
