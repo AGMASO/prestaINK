@@ -7,11 +7,17 @@ import {
   Button,
   Input,
 } from "@nextui-org/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import mintPRINK from "../lib/scripts/mintPRINK";
-
-export default function ModalMint() {
+interface ModalMintProps {
+  amountPrinkHigh: number | null;
+  amountPrinkMedium: number | null;
+}
+export default function ModalMint({
+  amountPrinkHigh,
+  amountPrinkMedium,
+}: ModalMintProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -58,8 +64,20 @@ export default function ModalMint() {
       <Modal isOpen={isOpen} onClose={handleCloseModal} placement='top-center'>
         <ModalContent>
           <form onSubmit={handleSubmit}>
-            <ModalHeader className='flex flex-col gap-1'>
+            <ModalHeader className='flex flex-col gap-1 text-black'>
               Take Loan / Mint PRINK
+              <p className=' text-[10px] text-red-500'>
+                {amountPrinkHigh !== undefined && amountPrinkHigh !== null
+                  ? `Max Amount to Mint based on your Collateral: ${amountPrinkHigh} PRINK (High Risk) `
+                  : "Loading..."}
+              </p>
+              <p className=' text-[10px] text-green-500 '>
+                {amountPrinkMedium !== undefined &&
+                amountPrinkMedium !== null &&
+                amountPrinkMedium > 0
+                  ? `Medium Risk of Liquidation:  ${amountPrinkMedium} PRINK`
+                  : ""}
+              </p>
             </ModalHeader>
             <ModalBody>
               <Input
