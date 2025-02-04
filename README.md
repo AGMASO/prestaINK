@@ -1,5 +1,9 @@
 # PrestaInk Protocol
 
+# Try Out
+The app is live and ready for interaction. You can test it at the following address:
+[https://prestaink.vercel.app/](https://prestaink.vercel.app/)
+
 ## Description
 The **PrestaInk Protocol** is a decentralized stablecoin system designed to maintain a 1:1 peg with the USD. This protocol is built exclusively for the **INK** blockchain and uses **wETH** as the sole collateral. Its design ensures the system remains over-collateralized, guaranteeing that the collateral value always exceeds the issued stablecoins.
 
@@ -26,10 +30,6 @@ Users can withdraw collateral and burn **PRINK** as long as the required health 
 
 ### Liquidations
 The protocol allows users to liquidate under-collateralized positions, ensuring the system's stability.
-
-# Try Out
-The app is live and ready for interaction. You can test it at the following address:
-[https://prestaink.vercel.app/](https://prestaink.vercel.app/)
 
 
 # Installation
